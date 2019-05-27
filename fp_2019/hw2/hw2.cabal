@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: df74806f5fd64820ea38e2074ef313d6f8cd89b3d7e2c7efbe16dc7120ef5fe9
+
+name:           hw2
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/catr1ne55/hw2#readme>
+homepage:       https://github.com/catr1ne55/hw2#readme
+bug-reports:    https://github.com/catr1ne55/hw2/issues
+author:         catr1ne55
+maintainer:     catherine.kabanova@yandex.ru
+copyright:      2019 catr1ne55
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/catr1ne55/hw2
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_hw2
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , containers
+  default-language: Haskell2010
+
+executable hw2-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hw2
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+      , containers
+      , hw2
+  default-language: Haskell2010
+
+test-suite hw2-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_hw2
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+      , containers
+      , hspec
+      , hw2
+  default-language: Haskell2010
